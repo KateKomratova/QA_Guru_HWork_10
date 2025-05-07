@@ -1,6 +1,4 @@
 import os
-
-import command
 from selene import browser, have
 
 
