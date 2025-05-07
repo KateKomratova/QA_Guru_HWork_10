@@ -27,7 +27,7 @@ def test_practice_form(browser_conf):
     with allure.step("Заполняем поле 'Hobbies'"):
         registration_page.fill_hobbies()
     with allure.step("Добавляем изображение"):
-        registration_page.upload_picture('../resources/test_image.jpg')
+        registration_page.upload_picture()
     with allure.step("Заполняем поле 'Current Address'"):
         registration_page.fill_address('ul. Pobednaya, d.7, kv.55')
     with allure.step("Заполняем поле 'State and City'"):

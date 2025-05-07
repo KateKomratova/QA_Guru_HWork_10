@@ -48,7 +48,8 @@ class RegistrationPage:
         browser.element('#city').click()
         browser.element('#react-select-4-input').set_value(value).press_tab()
 
-    def upload_picture(self, file_name):
+    def upload_picture(self):
+        file_name = os.path.join(os.path.dirname(__file__), '..', 'resources', 'test_image.jpg')
         browser.element('#uploadPicture').send_keys(os.path.abspath(file_name))
 
     def submit(self):
