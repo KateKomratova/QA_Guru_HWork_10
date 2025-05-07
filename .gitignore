@@ -175,3 +175,5 @@ pyrightconfig.json
 
 # Allure
 tests/allure-results
+
+.env/
