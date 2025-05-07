@@ -1,5 +1,5 @@
 import os
-from selene import browser, have
+from selene import browser, have, command
 
 
 class RegistrationPage:
@@ -78,3 +78,4 @@ class RegistrationPage:
     def remove_baner_footer(self):
             browser.driver.execute_script("$('#fixedban').remove()")
             browser.driver.execute_script("$('footer').remove()")
+            browser.element('#submit').perform(command.js.scroll_into_view)
