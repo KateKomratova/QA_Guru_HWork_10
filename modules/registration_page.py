@@ -78,4 +78,5 @@ class RegistrationPage:
     def remove_baner_footer(self):
             browser.driver.execute_script("$('#fixedban').remove()")
             browser.driver.execute_script("$('footer').remove()")
+            browser.element('#react-select-3-input').perform(command.js.scroll_into_view)
             browser.element('#submit').perform(command.js.scroll_into_view)

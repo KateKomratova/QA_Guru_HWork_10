@@ -11,12 +11,20 @@ from utils import attach
 def load_env():
     load_dotenv()
 
+def pytest_addoption(parser):
+    parser.addoption(
+        '--browser_version',
+        default='128.0'
+    )
+
 @pytest.fixture(scope="function")
-def browser_conf(load_env):
+def browser_conf(request):
+    browser_version = request.config.getoption('--browser_version')
     options = Options()
+    options.set_capability("goog:loggingPrefs", {"browser": "ALL"})
     selenoid_capabilities = {
         "browserName": "chrome",
-        "browserVersion": "128.0",
+        "browserVersion": browser_version,
         "selenoid:options": {
             "enableVNC": True,
             "enableVideo": True
