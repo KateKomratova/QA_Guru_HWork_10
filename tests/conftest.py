@@ -9,14 +9,10 @@ from utils import attach
 # Загрузка переменных окружения из .env
 @pytest.fixture(scope="session", autouse=True)
 def load_env():
-        load_dotenv()
+    load_dotenv()
 
 @pytest.fixture(scope="function")
 def browser_conf(load_env):
-    browser.config.window_width = 1920
-    browser.config.window_height = 1080
-    browser.config.base_url = 'https://demoqa.com'
-
     options = Options()
     selenoid_capabilities = {
         "browserName": "chrome",
@@ -40,8 +36,9 @@ def browser_conf(load_env):
         options=options)
 
     browser.config.driver = driver
-
-
+    browser.config.window_width = 1920
+    browser.config.window_height = 1080
+    browser.config.base_url = 'https://demoqa.com'
 
     yield browser
 

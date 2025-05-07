@@ -1,4 +1,6 @@
 import os
+
+import command
 from selene import browser, have
 
 
@@ -73,3 +75,7 @@ class RegistrationPage:
             state_and_city
         )
     )
+
+    def remove_baner_footer(self):
+            browser.driver.execute_script("$('#fixedban').remove()")
+            browser.driver.execute_script("$('footer').remove()")

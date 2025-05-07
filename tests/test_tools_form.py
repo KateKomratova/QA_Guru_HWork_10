@@ -7,6 +7,8 @@ def test_practice_form(browser_conf):
     registration_page = RegistrationPage()
     with allure.step("Открываем форму заполнения"):
         registration_page.open()
+    with allure.step("Удаляем рекламу"):
+        registration_page.remove_baner_footer()
 
     # WHEN
     with allure.step("Заполняем поле 'Name'"):
