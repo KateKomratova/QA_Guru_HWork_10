@@ -1,8 +1,5 @@
-pytest~=8.3.5
+pytest
 selene == 2.0.0rc9
-selenium~=4.31.0
 allure-pytest
-utils~=1.0.2
-dotenv~=0.9.9
-python-dotenv~=1.1.0
+python-dotenv
 allure-python-commons~=2.14.0
